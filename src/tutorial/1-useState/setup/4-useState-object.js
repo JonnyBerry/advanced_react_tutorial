@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const UseStateObject = () => {
-  const [person,setPerson] = useState({
+  const [person, setPerson] = useState({
   name:'jonathan',
   age:24,
   message:'random message',
