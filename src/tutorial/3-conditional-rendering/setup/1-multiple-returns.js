@@ -5,6 +5,14 @@ const MultipleReturns = () => {
   const [isError,setIsError] = useState(false)
   const [user,setUser] = useState('default user');
 
+
+useEffect(()=>{
+  fetch(url)
+  .then((resp)=> resp.json())
+  .then((user) => console.log(user))
+  .catch(error => console.log(error));
+},[]);
+
   if (isLoading) {
     return <div>
       <h1>Loading...</h1>
@@ -12,13 +20,15 @@ const MultipleReturns = () => {
   }
   if (isError){
 return (
- <div>
+  <div>
       <h1>Error...</h1>
     </div>
     );
   }
-
-  return <h2>multiple returns</h2>;
+ return <div>
+      <h1>{user}</h1>
+    </div>;
+  //return <h2>multiple returns</h2>;
 };
 
 export default MultipleReturns;
