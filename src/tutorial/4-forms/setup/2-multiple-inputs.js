@@ -9,6 +9,8 @@ import React, { useState } from 'react';
 const ControlledInputs = () => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
+  const [age, setAge] = useState('');
+  const [person,setPerson] = useState({firstName:'', email:'', age:''})
   const [people, setPeople] = useState([]);
 
   const handleSubmit = (e) => {
@@ -49,6 +51,16 @@ const ControlledInputs = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+          <div className='form-control'>
+            <label htmlFor='age'>Age : </label>
+            <input
+              type='email'
+              id='age'
+              name='age'
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+            </div>
           <button type='submit'>add person</button>
         </form>
         {people.map((person, index) => {
