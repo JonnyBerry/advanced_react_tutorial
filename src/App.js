@@ -1,9 +1,9 @@
 import React from 'react';
-import Final from './tutorial/6-useReducer/final';
+import Setup from './tutorial/6-useReducer/setup';
 function App() {
   return (
   <div className="container">
-    <Final />
+    <Setup />
     </div>
  );
 }
