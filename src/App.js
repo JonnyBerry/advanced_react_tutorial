@@ -1,11 +1,11 @@
 import React from 'react';
-import Setup from './tutorial/1-useState/setup/2-useState-basics';
+import Setup from './tutorial/6-useReducer/setup';
 function App() {
-  return(
+  return (
   <div className="container">
-    <Setup/>
+    <Setup />
     </div>
-);
+ );
 }
 
 export default App;
