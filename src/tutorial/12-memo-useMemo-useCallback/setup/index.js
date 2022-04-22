@@ -8,8 +8,13 @@ const url = 'https://course-api.com/javascript-store-products'
 // every time props or state changes, component re-renders
 
 const Index = () => {
-  const { products } = useFetch(url)
-  const [count, setCount] = useState(0)
+  const { products } = useFetch(url);
+  const [count, setCount] = useState(0);
+  const [cart,setCart] = useState(0);
+
+  const addToCart = () => {
+    setCart(cart + 1);
+  }
 
   return (
     <>
@@ -22,7 +27,7 @@ const Index = () => {
   )
 }
 
-const BigList = ({ products }) => {
+const BigList = React.memo(({ products }) => {
   useEffect(()=>{
     console.log('big list called');
   })
@@ -33,7 +38,7 @@ const BigList = ({ products }) => {
       })}
     </section>
   )
-}
+});
 
 const SingleProduct = ({ fields }) => {
   useEffect(()=>{
